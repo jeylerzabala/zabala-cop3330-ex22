@@ -27,5 +27,39 @@ Modify the program so that it asks for ten numbers instead of three.
 Modify the program so that it asks for an unlimited number of numbers.
 */
 
+import java.util.Scanner;
+
 public class App {
+    public static void main(String[] args) {
+
+        int number1, number2, number3, largestNumber;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the first number: ");
+        number1 = sc.nextInt();
+
+        System.out.print("Enter the second number: ");
+        number2 = sc.nextInt();
+
+        System.out.print("Enter the third number: ");
+        number3 = sc.nextInt();
+
+        if ((number1 == number2) || (number1 == number3) || (number2 == number3)) {
+            System.out.println("Input is not valid.");
+            System.exit(0);
+        }
+
+        if ((number1 > number2) && (number1 > number3)) {
+            largestNumber = number1;
+        }
+        else if ((number2 > number1) && (number2 > number3)) {
+            largestNumber = number2;
+        }
+        else if ((number3 > number1) && (number3 > number2)) {
+            largestNumber = number3;
+        }
+        System.out.println("The largest number is " + largestNumber + ".");
+
+
+    }
 }
